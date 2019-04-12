@@ -1,0 +1,18 @@
+
+.logForm{
+	margin-top: 12vh;
+}
+
+.field{
+	width: 90%; margin-left: 4vw; height: 8vh; margin-top: 2vh; background-color: #e1f9d4; border-radius: 3vw;
+	border:solid 1px #e1f9d4; color:white; font-size: 150%; padding-left: 10%;
+}
+
+.submitButton{
+	width: 90%; margin-left: 4vw; height: 8vh; margin-top: 2vh; background-color: #538234; border-radius: 4vw;
+	border:solid 1px #538234; color:white; font-size: 150%;
+}
+
+#forgotPassword{
+	height: 5vh;margin-bottom: 10vh; font-size: 100%;
+}

@@ -1,0 +1,7 @@
+{
+  "name": "MealyMealApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

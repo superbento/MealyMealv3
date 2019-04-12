@@ -1,0 +1,16 @@
+
+
+#femme{
+	width: 50%; height: 5vh; margin-left: 25%; border:solid 5px #538234; color:#538234; font-size: 150%; background-color: transparent;
+}
+
+#homme{
+	width: 50%;height: 5vh; margin-left: 25%; border:solid 5px #538234; color:#538234; font-size: 150%; background-color: transparent;
+}
+
+.gender{
+	margin-top: 2vh;
+}
+
+.gender div{
+}

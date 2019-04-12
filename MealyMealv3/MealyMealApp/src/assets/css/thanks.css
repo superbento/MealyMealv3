@@ -1,0 +1,16 @@
+
+.thanksrow{
+	margin-top: 15vh;
+}
+
+
+.thanks{
+	width:80%; margin-left:10%; height: 80vw; background-color: rgba(0, 0, 255, 0.1); border-radius: 3vw;
+	margin-bottom: 10vh;
+}
+
+.thanks p{text-align:center; color:white;}
+
+ .thanks img{
+	  width:80%; margin-left:10%; height:auto;
+}

@@ -1,0 +1,99 @@
+
+<ion-header>
+  <ion-toolbar>
+    <button class="logout" (click)='logout()'> <ion-icon name="log-out" ></ion-icon></button>
+    <ion-title>
+     User
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-grid class="background" > 
+ 
+<ion-row>
+  
+<chart [options] = "chartOptions" style="display: block; width: 100%" type = "chart"> </chart>
+
+  </ion-row>
+
+
+ <ion-content   padding class="vertical-center" [scrollEvents]="true"  style="height: 300px; width:100%; align-items: center; background-color: gray"> 
+    <ion-toolbar  [class.show-background]="showToolbar">
+  <ion-row>
+  <ion-list style="width: 100%">
+
+   <form [formGroup]="percentageform" (ngSubmit)="onSubmitForm()" >
+  
+  <ion-item >
+    <ion-checkbox slot="end" formControlName='dish' [(ngModel)]="form[0].isChecked"></ion-checkbox>
+     <ion-label>breakfast</ion-label>
+  </ion-item>
+
+  <ion-item >
+  <ion-checkbox slot="end" formControlName='dish' [(ngModel)]="form[1].isChecked"></ion-checkbox>
+   <ion-label>snack 1</ion-label>
+  </ion-item>
+
+  <ion-item >
+    <ion-checkbox slot="end" formControlName='dish'  [(ngModel)]="form[2].isChecked"></ion-checkbox>
+     <ion-label>lunch</ion-label>
+  </ion-item>
+
+  <ion-item >
+    <ion-checkbox slot="end" formControlName='dish'  [(ngModel)]="form[3].isChecked"></ion-checkbox>
+     <ion-label>snack 2</ion-label>
+  </ion-item>
+
+  <ion-item >
+    <ion-checkbox slot="end" formControlName='dish'  [(ngModel)]="form[4].isChecked"></ion-checkbox>
+     <ion-label>diner</ion-label>
+  </ion-item> 
+
+ <button class="submitButton" >submit</button>
+
+</form>
+</ion-list>
+
+</ion-row>
+</ion-toolbar>
+</ion-content>
+<ion-tabs>
+
+
+  <ion-tab-bar slot="bottom">
+   
+    <ion-tab-button >
+       <a routerLink="/user">
+      <ion-icon name="contact"></ion-icon>
+      <ion-label>User</ion-label>
+     </a>
+    </ion-tab-button>
+
+   
+    <ion-tab-button >
+       <a routerLink="/setting">
+      <ion-icon name="settings"></ion-icon>
+      <ion-label>Setting</ion-label>
+       </a>
+    </ion-tab-button>
+   
+    <ion-tab-button>
+       <a routerLink="/menu">
+      <ion-icon name="list-box"></ion-icon>
+      <ion-label>Menu</ion-label>
+       </a>
+    </ion-tab-button>
+  
+
+   <ion-tab-button >
+     <a routerLink="/cart">
+      <ion-icon name="cart"></ion-icon>
+      <ion-label>My cart</ion-label>
+        </a>  
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+</ion-tabs>
+
+</ion-grid>

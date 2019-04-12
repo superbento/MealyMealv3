@@ -1,0 +1,43 @@
+
+#femme{
+	 width: 5vh; height: 5vh; background-color: #e1f9d4; margin-left: 10%
+}
+
+#homme{
+	 width: 5vh;  height: 5vh; background-color: #e1f9d4; margin-left: 10%
+}
+
+.gender{
+	margin-top: 2vh; font-size: 150%;
+}
+
+
+p{
+	text-align: center; font-size: 150%; font-weight: bold;
+}
+
+
+select option{
+	width: 90%; height: 10%; color : black
+}
+
+
+.thanksrow{
+	margin-top: 15vh;
+}
+
+.submitButton{
+	width: 90%; margin-left: 4vw; height: 8vh; margin-top: 2vh; background-color: #538234; border-radius: 4vw;
+	border:solid 1px #538234; color:white; font-size: 5vw;
+}
+
+.thanks{
+	width:80%; margin-left:10%; height: 80vw; background-color: rgba(0, 0, 255, 0.1); border-radius: 3vw;
+	margin-bottom: 10vh;
+}
+
+.thanks p{text-align:center; color:white;}
+
+ .thanks img{
+	  width:80%; margin-left:10%; height:auto;
+}

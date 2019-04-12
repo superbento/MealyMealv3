@@ -1,0 +1,104 @@
+
+
+
+
+	   <ion-grid class="background" > 
+			
+			<ion-row class="appname" >
+           	
+                 
+                     <p>Mealy meal</p>
+
+
+           </ion-row> 
+
+     <form [formGroup]="changeInfo" (ngSubmit)="onSubmitForm()" *ngIf="page!=3">
+
+         <ion-row class="subscribeForm" *ngIf="page === 1" >
+           	
+             <h2>change ur info</h2>
+                 
+                 <div class="forms">
+
+                    
+                     <ion-col col-md-12>
+                      <input type="number" class=" field" id="CurrentWeight" formControlName="currentWeight" placeholder="Current Weight" />
+                     </ion-col>
+
+                      <ion-col col-md-12>
+                      <input type="number" class=" field" id="Size" formControlName="size" placeholder="Size"/>
+                      </ion-col>
+
+               
+
+
+
+
+                      <ion-col col-md-12>
+                     	<button type="submit" class="submitButton" id="continue" >next</button>
+                     </ion-col>
+                </div>
+
+           </ion-row> 
+
+           <ion-row  class="subscribeForm" *ngIf="page === 2" >
+            
+             <h2>Join us</h2>
+                 
+                  <div class="forms">
+
+                 
+
+                      <ion-col col-md-12>
+                      <input type="password" class="field" id="password" formControlName="password" placeholder="Password">
+                     </ion-col>
+
+                     <ion-col col-md-12>
+                      <input type="password" class="field" id="passwordconfirm" formControlName="passwordconfirm" placeholder="Confirm Password">
+                     </ion-col>
+
+
+                     <ion-col col-md-12>
+                     <button class="submitButton" id="previous" (click)="previousPage()" >Previous</button><button type="submit" class="submitButton" id="Save">Save</button>
+                    </ion-col>
+                  </div>
+
+                </ion-row >
+                  <p>{{page}}/2</p>
+            </form>
+
+                  
+
+
+
+               <ion-row class="thanksrow" *ngIf="page === 3">
+                    
+                    <div>
+                      <ion-col col-xs-12 col-md-12> 
+                        <div class="thanks">
+                          <img src="../../assets/img/smiley.png"/>
+                          <p>success</p>
+                          <p>Click Contiue to back to your menu)</p>
+
+                        </div>
+                      </ion-col>
+
+                        <ion-col col-xs-12 col-md-12>
+                            <a routerLink="../menu"><button class="submitButton" id="Continue" >Continue</button></a>
+                       </ion-col>
+                       </div>
+
+                 </ion-row> 
+
+         
+
+          </ion-grid> 
+      
+
+
+      
+
+         
+
+      
+	

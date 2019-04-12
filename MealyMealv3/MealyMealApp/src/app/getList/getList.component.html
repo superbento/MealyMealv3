@@ -1,0 +1,83 @@
+<div layout="column">
+    <div flex>
+        <ion-header>
+        <ion-toolbar>
+            <button (click)='pageBack()'> <ion-icon name="back" ></ion-icon></button>
+            <ion-title>Mealy-meal</ion-title>
+        </ion-toolbar>
+
+        </ion-header>
+    </div>
+    <div flex>
+        <ion-toolbar>
+            <ion-searchbar animated (keyup)="getList($event.target.value)"></ion-searchbar>
+        </ion-toolbar>
+    </div>
+    <div flex>
+        <ion-card>
+            <!--<ion-card-header>
+                <ion-card-subtitle>{{ listBox.getRawValue().brand }}</ion-card-subtitle>
+                <ion-card-title>{{ listBox.getRawValue().name }}</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+                {{ listBox.getRawValue().description }},<br>
+                {{ listBox.getRawValue().gtin }}
+            </ion-card-content>-->
+            <ion-content padding class="vertical-center" [scrollEvents]="true"  style=" min-width:90%; height:60vh; align-items: center; background-color: gray">
+      <ion-toolbar  [class.show-background]="showToolbar">
+      
+        <ion-card-header>
+          <ion-card-title>List</ion-card-title>
+        </ion-card-header>
+         <ion-list>
+           <ion-item  *ngFor="let aliment of user.module.program.AlimentList; let indx=index"> 
+              <ion-label>{{aliment.name}}, {{this.floor(aliment.quantity/15)}} euros</ion-label>
+           </ion-item>
+         </ion-list>
+         </ion-toolbar>
+ </ion-content>
+        </ion-card>
+    </div>
+
+<ion-tabs>
+    <button class="submitButton" (click)="navCartSecond()" style="margin-bottom: 30px">payer</button>
+  <ion-tab-bar slot="bottom">
+    
+    <ion-tab-button >
+       <a routerLink="/user">
+      <ion-icon name="contact"></ion-icon>
+      <ion-label>User</ion-label>
+     </a>
+    </ion-tab-button>
+
+   
+    <ion-tab-button >
+       <a routerLink="/setting">
+      <ion-icon name="settings"></ion-icon>
+      <ion-label>Setting</ion-label>
+       </a>
+    </ion-tab-button>
+   
+    <ion-tab-button>
+       <a routerLink="/menu">
+      <ion-icon name="list-box"></ion-icon>
+      <ion-label>Menu</ion-label>
+       </a>
+    </ion-tab-button>
+  
+
+   <ion-tab-button >
+     <a routerLink="/cart">
+      <ion-icon name="cart"></ion-icon>
+      <ion-label>My cart</ion-label>
+        </a>  
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+</ion-tabs> 
+</div>
+
+
+

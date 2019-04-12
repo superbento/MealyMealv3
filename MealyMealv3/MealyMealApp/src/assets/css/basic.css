@@ -1,0 +1,43 @@
+.background{
+	/*background-image: linear-gradient(#c4f9a7 30%, #5aa234 70%);*/
+	background-color: #c4f9a7;
+
+	width: 100vw; min-height: 100vh; 
+}
+
+.appname{
+	height:5vh; text-align: center; font-size: 80%; padding-top: 3vh
+}
+
+
+
+.logo{
+	width:30vw; height:30vw; margin-left: 35vw; margin-top:10vh;  background-image: url("../img/logo.PNG"); 
+	background-repeat: no-repeat; background-size: cover;
+}
+
+
+h1{margin-top:10vh; text-align: center;}
+
+
+.ok{
+	border:solid; width:100vw; height:20vh;
+}
+
+
+.forms{
+	padding-top: 12vh;
+}
+
+h2{
+	text-align: center; margin-top: 5vh; font-weight: bold;
+}
+
+.row{
+	
+}
+
+
+.userpic{
+	width:20vw; height: auto;
+}

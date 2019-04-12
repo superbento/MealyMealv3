@@ -1,0 +1,111 @@
+<ion-header>
+    <ion-toolbar>
+
+
+
+        <ion-title>
+            my cart
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-grid class="background" >
+
+    <ion-row justify-content-center >
+        <ion-button   fill="solid" expand="block"  color="dark"  style="width:100%">
+            <label >Where Order?</label>
+        </ion-button>
+    </ion-row>
+
+
+    <ion-row>
+
+        <ion-content padding class="vertical-center" [scrollEvents]="true"  style=" min-width:90%; height:80vh; align-items: center; background-color: gray">
+            <ion-toolbar  [class.show-background]="showToolbar">
+
+                <ion-card-header>
+                    <ion-card-title>List magasin</ion-card-title>
+                </ion-card-header>
+
+
+                <ion-list *ngFor="let item of this.test | keyvalue ">
+                    <div flex>
+
+                        <ion-card (click)='navCartThird()'>
+                            <ion-card-header>
+                                <ion-card-subtitle>m</ion-card-subtitle>
+                                <ion-card-title>{{item.key}}</ion-card-title>
+                            </ion-card-header>
+
+                            <ion-card-content>
+                               {{item.value}}
+                            </ion-card-content>
+                        </ion-card>
+                    </div>
+                </ion-list>
+                    <div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="text-center">
+                                    <h3>
+                                        <div #gmap style="width:100%;height:400px"></div>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+               
+
+
+            </ion-toolbar>
+        </ion-content>
+
+
+
+    </ion-row>
+
+
+
+
+
+    <ion-tabs>
+
+        <ion-tab-bar slot="bottom">
+
+            <ion-tab-button >
+                <a routerLink="/user">
+                    <ion-icon name="contact"></ion-icon>
+                    <ion-label>User</ion-label>
+                </a>
+            </ion-tab-button>
+
+
+            <ion-tab-button >
+                <a routerLink="/setting">
+                    <ion-icon name="settings"></ion-icon>
+                    <ion-label>Setting</ion-label>
+                </a>
+            </ion-tab-button>
+
+            <ion-tab-button>
+                <a routerLink="/menu">
+                    <ion-icon name="list-box"></ion-icon>
+                    <ion-label>Menu</ion-label>
+                </a>
+            </ion-tab-button>
+
+
+            <ion-tab-button >
+                <a routerLink="/cart">
+                    <ion-icon name="cart"></ion-icon>
+                    <ion-label>My cart</ion-label>
+                </a>
+            </ion-tab-button>
+
+        </ion-tab-bar>
+
+    </ion-tabs>
+
+</ion-grid>

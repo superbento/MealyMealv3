@@ -1,0 +1,40 @@
+
+	   <ion-grid class="background" > 
+			
+			<ion-row class="appname" >
+           	
+                 
+                 
+                     <img  src="./assets/img/logo2.png" style="margin-left: 120px" width="120px" height="100px">
+
+
+
+           </ion-row> 
+
+         <form [formGroup]="Login" (ngSubmit)="onSubmitForm()" class="logForm" >
+           	
+             <h2>log in</h2>
+                 
+                 
+                     <ion-col col-md-12>
+                     			<input type="email" class="field" id="username" formControlName="email" placeholder="Email">
+                     </ion-col>
+                      <ion-col col-md-12>
+                     	<input type="password" class="field" id="password" formControlName="password" placeholder="Password">
+                     </ion-col>
+                
+					
+                    
+                     	<ion-col col-md-12 id="forgotPassword">
+							<a routerLink="/forget">Forgot password ?</a> 
+						</ion-col>           
+					
+
+              <ion-col col-md-12>
+                 	<button type="submit" class="submitButton" id="login" > Sign in</button>
+                 	<a routerLink="../subs"><button class="submitButton btn-btn-success" id="signIn" >Sign up</button></a>
+              </ion-col>
+
+           </form> 
+
+          </ion-grid> 

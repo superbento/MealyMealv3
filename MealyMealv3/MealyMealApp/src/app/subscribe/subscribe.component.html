@@ -1,0 +1,184 @@
+
+
+
+
+	   <ion-grid class="background" > 
+			
+			<ion-row class="appname" >
+           	
+                 
+                     <img  src="./assets/img/logo2.png" style="margin-left: 120px" width="120px" height="100px">
+
+
+           </ion-row> 
+
+     <form [formGroup]="Subscribtion" (ngSubmit)="onSubmitForm()" *ngIf="page!=4">
+
+         <ion-row class="subscribeForm" *ngIf="page === 1" >
+           	
+             <h2>Join us</h2>
+                 
+                 <div class="forms">
+
+                     <ion-col col-md-12>
+                     			<input type="text" class="field" id="firstname" formControlName="firstname" placeholder="First name">
+                     </ion-col>
+
+                      <ion-col col-md-12>
+                          <input type="text" class="field" id="lastname" formControlName="lastname" placeholder="Last name">
+                     </ion-col>
+
+                     <ion-col col-md-12>
+                      <input type="number" class=" field" id="CurrentWeight" formControlName="currentWeight" placeholder="Current Weight" />
+                     </ion-col>
+
+                      <ion-col col-md-12>
+                      <input type="number" class=" field" id="Size" formControlName="size" placeholder="Size"/>
+                      </ion-col>
+
+                      <ion-col col-md-12>
+                      <input type="number" class=" field" id="Age" formControlName="age" placeholder="Age" />
+                      </ion-col>
+
+                      <ion-col col-md-12>
+                        <ion-row class="gender">
+                            <!--<ion-col >You are :</ion-col>
+                           <ion-col><label for="homme">A man </label> <input type="checkbox" id="homme" ></ion-col> 
+                           <ion-col><label for="femme">A woman </label><input type="checkbox" id="femme"></ion-col> -->
+                           <select  class=" field" id="gender_" formControlName="gender" value="choose your gender">
+                            <option>Male</option>
+                            <option>Female</option>
+                           </select>
+                        </ion-row>
+                      </ion-col>
+
+
+
+
+                      <ion-col col-md-12>
+                     	<button type="submit" class="submitButton" id="continue" >next</button>
+                     </ion-col>
+                </div>
+
+           </ion-row> 
+
+           <ion-row  class="subscribeForm" *ngIf="page === 2" >
+            
+             <h2>Join us</h2>
+                 
+                  <div class="forms">
+
+                    <ion-col col-md-12>
+                          <input type="date" class="field" formControlName="birthday" id="birthday" placeholder="birthday">
+                     </ion-col>
+
+                     <ion-col col-md-12>
+                          <input type="email" class="field" formControlName="email" id="email" placeholder="Email">
+                     </ion-col>
+
+                      <ion-col col-md-12>
+                      <input type="password" class="field" id="password" formControlName="password" placeholder="Password">
+                     </ion-col>
+
+                     <ion-col col-md-12>
+                      <input type="password" class="field" id="passwordconfirm" formControlName="passwordconfirm" placeholder="Confirm Password">
+                     </ion-col>
+
+
+                     <ion-col col-md-12>
+                     <button class="submitButton" id="previous" (click)="previousPage()" >Previous</button>
+                     <button type="submit" class="submitButton" id="Save">Continue</button>
+                    </ion-col>
+                  </div>
+
+                </ion-row >
+
+
+
+              <ion-row *ngIf="page === 3">
+                <ion-card style="width:100%;background-color: white">
+                <ion-card-header>
+                  <ion-card-title>Allergie</ion-card-title>
+
+                   <form [formGroup]="chooseallergy" (ngSubmit)="allergy()" >
+
+                    <select formControlName="aliment">
+                      
+                      <option *ngFor="let aliment of aliments"> {{aliment}} </option>
+
+                    </select>
+
+                     <button type="submit" class="submitButton" (click) = "allergy()">Add allergy</button>
+                   </form>
+                     
+                </ion-card-header>
+                <ion-card-content>
+
+                   
+
+                      <ion-item *ngFor="let allergy of allergies">
+                        <ion-icon id="{{allergy}}" name="close" (click) = "deleteAllergy($event)"></ion-icon>
+                      <ion-label >
+                        {{allergy}}
+                      </ion-label>
+                    </ion-item>
+
+                
+                </ion-card-content>
+
+                 
+                  
+
+              </ion-card> 
+
+
+               <ion-col col-md-12>
+                     <button class="submitButton" id="previous" (click)="previousPage()" >Previous</button>
+                     <button type="submit" class="submitButton" id="Save">Save</button>
+              </ion-col>
+
+            
+              </ion-row>
+
+
+
+                  <p>{{page}}/3</p>
+            </form>
+
+                  
+
+
+
+
+
+               <ion-row class="thanksrow" *ngIf="page === 4">
+                    
+                    <div>
+                      <ion-col col-xs-12 col-md-12> 
+                        <div class="thanks">
+                          <img src="../../assets/img/smiley.png"/>
+                          <p>Thanks for your subscription</p>
+                          <p>Click Contiue to start your diet ;)</p>
+
+                        </div>
+                      </ion-col>
+
+                        <ion-col col-xs-12 col-md-12>
+                            <a routerLink="../log"><button class="submitButton" id="Continue" (click) = "onSubmitForm()" >Continue</button></a>
+                       </ion-col>
+                       </div>
+
+                 </ion-row> 
+
+         
+
+          </ion-grid> 
+      
+
+
+      
+
+         
+
+      
+	

@@ -1,0 +1,119 @@
+<ion-header>
+  <ion-toolbar>
+    <button class="logout" (click)='logout()'> <ion-icon name="log-out" ></ion-icon></button>
+    <ion-title>
+      setting
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-grid class="background" style="z-index: -1000;"> 
+
+ <ion-row justify-content-center style="margin-top: 15px;">
+  	<ion-button   expand="block"  color="dark"  style="width:100%">
+      <ion-icon name="notifications-outline"></ion-icon>
+      <ion-label style="width:25px"></ion-label>
+      <ion-label>Notification</ion-label>
+  </ion-button>
+</ion-row>
+
+ <ion-row justify-content-center style="margin-top: 15px;">
+  	<ion-button  expand="block"  color="dark" style="width:100%">
+      <a routerLink="/changeinfo"> 
+      <ion-icon name="lock"></ion-icon>
+      <ion-label style="width:25px"></ion-label>
+      <ion-label>Confidentialité et sécurité</ion-label> 
+    </a>
+
+   </ion-button>
+</ion-row>
+
+ <ion-row justify-content-center style="margin-top: 15px;">
+  	<ion-button   expand="block"  color="dark" style="width:100%">
+      <ion-icon name="wallet"></ion-icon>
+      <ion-label style="width:25px"></ion-label>
+      <ion-label>Paiment</ion-label>
+  </ion-button>
+</ion-row>
+
+<ion-row justify-content-center style="margin-top: 15px;">
+  	<ion-button   expand="block"  color="dark" style="width:100%">
+      <ion-icon name="help-circle"></ion-icon>
+      <ion-label style="width:25px"></ion-label>
+      <ion-label>A propos</ion-label>
+  </ion-button>
+</ion-row>
+
+<ion-row>
+	<ion-card style="width:100%;background-color: white">
+  <ion-card-header>
+    <ion-card-title>Allergie</ion-card-title>
+
+     <form [formGroup]="chooseallergy" (ngSubmit)="onSubmitForm()" >
+
+      <select formControlName="aliment">
+        
+        <option *ngFor="let aliment of aliments"> {{aliment}} </option>
+
+      </select>
+
+       <button type="submit" class="submitButton" >Add allergy</button>
+     </form>
+       
+  </ion-card-header>
+  <ion-card-content>
+
+     
+
+        <ion-item *ngFor="let allergy of allergies">
+          <ion-icon id="{{allergy}}" name="close" (click) = "deleteAllergy($event)"></ion-icon>
+        <ion-label >
+          {{allergy}}
+        </ion-label>
+      </ion-item>
+
+  
+  </ion-card-content>
+</ion-card> 
+</ion-row>
+
+
+<ion-tabs style="z-index: -999;">
+
+  <ion-tab-bar slot="bottom">
+   
+    <ion-tab-button >
+       <a routerLink="/user">
+      <ion-icon name="contact"></ion-icon>
+      <ion-label>User</ion-label>
+     </a>
+    </ion-tab-button>
+
+   
+    <ion-tab-button >
+       <a routerLink="/setting">
+      <ion-icon name="settings"></ion-icon>
+      <ion-label>Setting</ion-label>
+       </a>
+    </ion-tab-button>
+   
+    <ion-tab-button>
+       <a routerLink="/menu">
+      <ion-icon name="list-box"></ion-icon>
+      <ion-label>Menu</ion-label>
+       </a>
+    </ion-tab-button>
+  
+
+   <ion-tab-button >
+     <a routerLink="/cart">
+      <ion-icon name="cart"></ion-icon>
+      <ion-label>My cart</ion-label>
+        </a>  
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+</ion-tabs>
+
+</ion-grid>

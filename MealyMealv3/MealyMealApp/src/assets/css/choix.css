@@ -1,0 +1,68 @@
+
+.partnerLogo{
+	width: 100%; height:auto; 
+}
+
+.shopLogo{
+	width: 100%; height:auto;
+}
+
+.allPartners, .recap{
+	width:100%; 
+}
+
+.recap{
+}
+
+.imageRecap{
+	width:30vw; margin-left: 35vw
+}
+
+.listeCourses{
+	width:50vw; min-height: 20vh; margin-left: 25vw; background-color: #e1f9d4; padding-left: 5%
+}
+
+.research{
+	 margin-bottom: 10%; margin-top: 10%; width: 100%; 
+}
+
+.research span{
+	padding-right: 5%;
+}
+
+.store{
+	width:35%; 
+}
+
+.price{
+	width:50%;  font-size: 150%; text-align: center;
+}
+
+.option, .researchBar{
+	width:100vw;
+}
+
+.shopblock{
+	width: 10vw; height: 10vw;  margin-left: 68vw;
+}
+.shopblock img{
+	width: 100%; height: 100%;
+}
+
+.ham{
+  width: 15vw; height: 10vw; 
+}
+.ham nav{
+  width: 100%; height:100%; 
+}
+.ham nav button, .ham nav button span {
+	 width: 100%; height:100%; margin:0;
+}
+
+.Menu{
+	width:100vw; 
+}
+
+
+
+body{font-size: 150%}

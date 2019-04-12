@@ -1,0 +1,124 @@
+
+
+
+
+     <ion-grid class="background" > 
+      
+      <ion-row class="appname" >
+            
+            
+                    <img  src="./assets/img/logo2.png" style="margin-top:-35px;margin-left: 130px" width="95px" height="73px">
+
+
+           </ion-row> 
+
+     <form [formGroup]="changeInfo" (ngSubmit)="onSubmitForm()" *ngIf="page!=3">
+
+         <ion-row class="subscribeForm" *ngIf="page === 1" >
+            
+             <h2>change ur info</h2>
+                 
+                 <div class="forms">
+                      <ion-col col-md-12 col-sm-12 col-xs-12>
+                      <label class="p2">firstName:</label><input type="text" style="width:56.5%"class="field" id="firstname" formControlName="firstname" value={{user.firstname}}  >
+                     </ion-col>
+
+                      <ion-col col-md-12 col-sm-12 col-xs-12>
+                      <label class="p2">lastName:</label>    <input type="text" style="width:58%"class="field" id="lastname" formControlName="lastname" value={{user.lastname}}>
+                     </ion-col>
+
+                     <ion-col col-md-12>
+                      <label class="p2">Weight:</label> <input type="number"  style="width:65%"class=" field" id="CurrentWeight" formControlName="currentWeight" value={{user.weight}} />
+                     </ion-col>
+
+                      <ion-col col-md-12>
+                       <label class="p2">Size:</label><input type="number" style="width:75%"class=" field" id="Size" formControlName="size" value={{user.size}}/>
+                      </ion-col>
+
+                      <ion-col col-md-12>
+                       <label class="p2">Age:</label><input type="number" style="width:75%" class=" field" id="Age" formControlName="age" value={{user.age}} />
+                      </ion-col>
+
+                      <ion-col col-md-12>
+                        <ion-row class="gender">
+                            <!--<ion-col >You are :</ion-col>
+                           <ion-col><label for="homme">A man </label> <input type="checkbox" id="homme" ></ion-col> 
+                           <ion-col><label for="femme">A woman </label><input type="checkbox" id="femme"></ion-col> -->
+                           <select  class=" field" id="gender_" formControlName="gender" value={{user.gender}}>
+                            <option>Male</option>
+                            <option>Female</option>
+                           </select>
+                        </ion-row>
+                      </ion-col>
+                      <ion-col col-md-12>
+                      <button type="submit" class="submitButton" id="continue" >next</button>
+                     </ion-col>
+                </div>
+
+           </ion-row> 
+
+           <ion-row  class="subscribeForm" *ngIf="page === 2" >
+            
+             <h2>Join us</h2>
+                 
+                  <div class="forms">
+                     <ion-col col-md-12>
+                       <label class="p2">Birthday:</label>   <input type="date" style="width:62%"class="field" formControlName="birthday" id="birthday" value={{user.birthday}}>
+                     </ion-col>
+                      <ion-col col-md-12>
+                      <label class="p2">Email:</label><input type="text" style="width:72%" class="field" id="email" formControlName="email" value={{user.email}}>
+                     </ion-col>
+
+                      <ion-col col-md-12>
+                      <label class="p2">password:</label> <input type="text" style="width:60%" class="field" id="password" formControlName="password" value={{user.password}}>
+                     </ion-col>
+
+                     <ion-col col-md-12>
+                      <label class="p2">confirm:</label> <input type="text" style="width:65%" class="field" id="passwordconfirm" formControlName="passwordconfirm" >
+                     </ion-col>
+
+
+                     <ion-col col-md-12>
+                     <button class="submitButton" id="previous" (click)="previousPage()" >Previous</button><button type="submit" class="submitButton" id="Save">Save</button>
+                    </ion-col>
+                  </div>
+
+                </ion-row >
+                  <p>{{page}}/2</p>
+            </form>
+
+                  
+
+
+
+               <ion-row class="thanksrow" *ngIf="page === 3">
+                    
+                    <div>
+                      <ion-col col-xs-12 col-md-12> 
+                        <div class="thanks">
+                          <img src="../../assets/img/smiley.png"/>
+                          <p>success</p>
+                          <p>Click Contiue to back to your menu)</p>
+
+                        </div>
+                      </ion-col>
+
+                        <ion-col col-xs-12 col-md-12>
+                            <a routerLink="../menu"><button class="submitButton" id="Continue" >Continue</button></a>
+                       </ion-col>
+                       </div>
+
+                 </ion-row> 
+
+         
+
+          </ion-grid> 
+      
+
+
+      
+
+         
+
+      
+  

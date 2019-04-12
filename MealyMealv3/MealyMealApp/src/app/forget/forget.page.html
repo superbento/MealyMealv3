@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <button class="logout" (click)='logout()'> <ion-icon name="log-out" ></ion-icon></button>
+    <ion-title>forget password</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-grid class="background">
+
+  <form [formGroup]="Subscribtion" (ngSubmit)="onSubmitForm()">
+
+         <ion-row style="margin-top: 50px;"class="subscribeForm"
+          >
+           	
+             <h2>your address?</h2>
+                 
+                 <div class="forms">
+                 	  <ion-col col-md-12>
+                          <input type="email" class="field" formControlName="email" id="email" placeholder="Email">
+                     </ion-col>
+                 </div>
+                 <button type="submit" class="submitButton" id="Save">send code</button>
+             </ion-row>
+         </form>
+
+         <form [formGroup]="code" (ngSubmit)="valideCode()">
+
+         <ion-row style="margin-top: 50px;"class="subscribeForm"
+          >
+           	
+             <h2>your code?</h2>
+                 
+                 <div class="forms">
+                 	  <ion-col col-md-12>
+                          <input type="text" class="field" formControlName="code" id="code" placeholder="your code">
+                     </ion-col>
+                 </div>
+                 <button type="submit" class="submitButton" id="Save">valide</button>
+             </ion-row>
+         </form>
+<ion-row>
+	<a routerLink="/log">
+      <ion-icon style="zoom:4.0;" name="arrow-round-back"></ion-icon>
+      <ion-label  stacked style="font-size: 4em">back</ion-label>
+     </a>
+</ion-row>
+</ion-grid>

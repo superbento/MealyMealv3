@@ -1,0 +1,147 @@
+
+<ion-header>
+  <ion-toolbar>
+
+    <button class="logout" (click)='logout()'> <ion-icon name="log-out" ></ion-icon>
+    
+    <ion-title>
+      Choose your module
+    </ion-title>
+
+    </button>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-grid class="background" > 
+	
+
+	<ion-row class="appname" >
+   	
+         
+          
+                     <img  src="./assets/img/logo2.png" style="margin-left: 140px" width="80px" height="60px">
+
+
+   </ion-row> 
+
+
+
+<ion-row justify-content-center class="rowChoose" *ngIf = "user.module != null" >
+
+<p>you have already choose a module, click here to follow up</p>
+
+</ion-row>
+  <ion-row justify-content-center class="rowChoose" *ngIf = "user.module != null" >
+
+  <a routerLink="/menu">
+      
+    
+
+      <ion-col col-sm-3 col-md-3 col-xl-3 col-lg-3 style= "background-color: #538234; color:white; padding-top: 5vh;  padding-bottom: 5vh" >
+         {{user.module.startDate}} - {{user.module.endDate}}
+      </ion-col>
+      <ion-col col-sm-9 col-md-9 col-xl-9 col-lg-9 style= "background-color: white; color:black; padding-top: 5vh;  padding-bottom: 5vh">
+        {{user.module.name}}
+         <ion-icon name="arrow-round-forward"></ion-icon>
+      </ion-col>
+
+    
+     
+     </a>
+
+
+
+       <button class="submitButton" id="newprogram" (click) = "finishprogram()" >  <ion-icon name="repeat"></ion-icon>Start a new program </button>
+
+</ion-row>
+
+ 
+ <ion-row class="rowChoose" *ngIf = "user.module === null" >
+    
+    
+      <ion-row class="chooseadv" *ngIf = "page === 1">
+       	  <h2> Choose your adventure {{user.firstname}}</h2>
+            
+            <ion-col col-sm-6 col-md-6 col-xl-6 col-lg-6  class="blockround"> 
+               <div class="round" (click)="chooseLooseWeight()" [ngClass]="{'select' : choosenModule ==='LooseWeight'}"> <ion-icon name="bicycle" style="zoom:3.5;"></ion-icon> </div>
+            </ion-col>
+
+             <ion-col col-sm-6 col-md-6 col-xl-6 col-lg-6  class="blockround">
+           	   <div class="round" (click)="chooseGainWeight()" [ngClass]="{'select' : choosenModule ==='GainWeight'}"> <ion-icon name="fitness"style="zoom:3.5;"></ion-icon></div>
+             </ion-col>
+             
+
+           
+              <ion-col col-sm-12 col-md-12  class=" butt">
+                     <button class="submitButton" id="Continue" (click)="nextPage()">Continue</button>
+               </ion-col>
+           
+      </ion-row>
+
+      <div *ngIf = "page === 2 ">
+       <h2> Let's start your program {{user.firstname}}</h2>
+          <form [formGroup]="specifications" (ngSubmit)="onSubmitForm()" >
+
+            <ion-col col-md-12 *ngIf = "gain">
+                <select class=" field" formControlName="ActivityFactor" placeholder="Email"  >
+                  <option disabled selected="selected">Choose your activity factor</option>
+                  <option value=1.2>Sédentaire (Peu ou pas d’exercice et travail de bureau)</option>
+                  <option value=1.4>Légèrement actif (Exercice ou sport léger 1 à 3 fois par semaine)</option>
+                  <option value=1.6>Modérément actif (Exercice ou sport modéré 3 à 5 fois par semaine)</option>
+                  <option value=1.7>Très actif (Exercice ou sport intense 6 à 7 fois par semaine)</option>
+                  <option value=1.9>Extrêmement actif (Exercice ou sport quotidien intense et travail physique)</option>
+              
+                </select>
+           </ion-col>
+
+           <ion-col col-md-12 *ngIf = "loose">
+                <select class=" field" formControlName="Activity" >
+                  <option disabled selected="selected">Choose your activity factor</option>
+                  <option value="Marche Lente">Slow walk</option>
+                  <option value="Marche rapide">Speed walk</option>
+                  <option value ="Course à pied lente">Slow run</option>
+                  <option value="Course à pied rapide">Speed run</option>
+                   <option value="Vélo">Bike</option>
+                  <option value="Natation lente">Slow swimming</option>
+                  <option value="Natation rapide">Speed swimming</option>
+                  <option value="Fitness Cardio">Fitness Cardio</option>
+                  <option value="Musculation">Body building</option>
+                  <option value="Gym aquatique">Aquatic gym</option>
+                </select>
+
+
+                <select class=" field" formControlName="hours" >
+                  <option disabled selected="selected">Choose the number of hours</option>
+                  <option value=0.5>une demi heure</option>
+                  <option value=1>une heure</option>
+                  <option value=1.5>une heure et demi</option>
+                  <option value=2>deux heures</option>
+                  <option value=2.5>deux heures et demi</option>
+                  <option value=3>trois heures</option>
+                  <option value=3.5>trois heures et demi</option>
+                  <option value=4>quatre heures</option>
+                 
+                </select>
+
+               <input type="number" class="field" id="objectif" formControlName="objectif" placeholder="Number of kg you want to loose">
+
+           </ion-col>
+
+            <ion-col col-md-12>
+            <input type="date" class="field" id="startdate" formControlName="startdate" placeholder="The start date of your program">
+           </ion-col>
+             <ion-col col-md-12>
+            <input type="date" class="field" id="enddate" formControlName="enddate" placeholder="The end date of your program">
+           </ion-col>
+
+           <ion-col col-md-12>
+           <button class="submitButton" id="previous" (click)="previousPage()" >Previous</button><button type="submit" class="submitButton" id="Save">Generate your Menu</button>
+           </ion-col>
+           </form>
+      </div>
+      
+   </ion-row> 
+
+ </ion-grid>
